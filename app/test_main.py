@@ -23,10 +23,12 @@ def test_get_human_age(
 ) -> None:
     assert get_human_age(cat_age, dog_age) == result
 
+
 def test_if_value_is_out_of_range() -> None:
     with pytest.raises(ValueError):
         get_human_age(-3, 3)
 
+
 def test_if_value_is_not_int() -> None:
     with pytest.raises(TypeError):
-        get_human_age("6", "3")
+        get_human_age("6", 3)
