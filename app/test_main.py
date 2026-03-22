@@ -1,3 +1,5 @@
+from typing import Type
+
 import pytest
 
 from app.main import get_human_age
@@ -34,9 +36,9 @@ def test_get_human_age(
     ]
 )
 def test_should_raise_error_for_invalid_input(
-    cat_age,
-    dog_age,
-    expected_exception,
+        cat_age: int | str,
+        dog_age: int | str,
+        expected_exception: Type[Exception],
 ) -> None:
     with pytest.raises(expected_exception):
         get_human_age(cat_age, dog_age)
