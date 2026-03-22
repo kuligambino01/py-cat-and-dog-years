@@ -22,6 +22,10 @@ def get_human_age(cat_age: int, dog_age: int) -> list:
     # Write your tests first, then implement the logic
 
     result = []
+    if not isinstance(cat_age, int) or not isinstance(dog_age, int):
+        raise TypeError
+    if cat_age < 0 or dog_age < 0:
+        raise ValueError
 
     if cat_age < 15:
         result.append(0)
